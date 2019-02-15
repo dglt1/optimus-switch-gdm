@@ -1,10 +1,20 @@
 # optimus-switch-gdm
-modified version to work with gdm/gnome. includes install script. made for manjaro linux.
-this install script and accompanying scripts/.conf files will setup an intel/nvidia PRIME setup that will provide
-the best possible performance for your intel/nvidia optimus laptop. this will also allow for switching between
-intel/nvidia (prime) mode and an intel only mode that also completely powers down and removes the nvidia gpu
-from sight allowing for improved battery life.
+- this is a modified and more complete version of my lightDM scripts, made to work with gdm/gnome. includes install - script. made for manjaro linux.
+- this install script and accompanying scripts/.conf files will setup an intel/nvidia PRIME setup that will provide
+- the best possible performance for your intel/nvidia optimus laptop. this will also allow for switching between
+- intel/nvidia (prime) mode and an intel only mode that also completely powers down and removes the nvidia gpu
+- from sight allowing for improved battery life.
 
+  - this script by default is for an intel gpu with a BusID 0:2:0
+  - and an nvidia gpu with BusID 01:00:0`
+  - you can verify this in terminal with this command `lspci | grep -E 'VGA|3D'`
+  - if yours do not match, edit ~/optimus-switch-gdm/switch/intel/intel-xorg.conf to match your BusID
+  - and ~/optimus-switch-gdm/switch/nvidia/nvidia-xorg.conf  to match your nvidia BusID
+  - DO THIS BEFORE RUNNING INSTALL SCRIPT, if you want it to work anyway.
+  - note: output like this "00:02.0 VGA " has to look like this 0:2:0 in the .conf for it to work.
+
+
+Lets begin.
 - requirements:
  - check `mhwd -li` to see what video drivers are installed, for this to work, you need only
  - video-nvidia installed, if you have others, start by removing them like this.
@@ -55,4 +65,4 @@ usage after running install script:
 
 `sudo set-nvidia.sh`  sets intel/nvidia (prime) mode.
 
-simple instruction's coming soon. if you cant figure it out, i am @dglt on manjaro's forum. 
+this should be pretty straight forward, if however, you cant figure it out, i am @dglt on the manjaro forum. 
