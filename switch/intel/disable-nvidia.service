@@ -1,5 +1,5 @@
-#/etc/systemd/system/run-root-script.service
-#sudo systemctl enable run-root-script.service
+#/etc/systemd/system/disable-nvidia.service
+#sudo systemctl enable disable-nvidia.service
 #runs gpu disable script as root at graphical.target
 
 [Unit]

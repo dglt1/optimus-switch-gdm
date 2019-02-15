@@ -31,6 +31,12 @@ cp /etc/switch/set-nvidia.sh /usr/local/bin/set-nvidia.sh
 cp /etc/switch/optimus.desktop /usr/local/share/optimus.desktop
 
 sleep 1
+echo 'Copying disable-nvidia.service to /etc/systemd/system/'
+cp /etc/switch/intel/disable-nvidia.service /etc/systemd/system/disable-nvidia.service
+chown root:root /etc/systemd/system/disable-nvidia.service
+chmod 644 /etc/systemd/system/disable-nvidia.service
+
+sleep 1
 echo 'Creating symlinks...'
 ln -s /usr/local/share/optimus.desktop /usr/share/gdm/greeter/autostart/optimus.desktop
 ln -s /usr/local/share/optimus.desktop /etc/xdg/autostart/optimus.desktop
