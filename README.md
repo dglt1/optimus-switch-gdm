@@ -1,18 +1,21 @@
 # optimus-switch-gdm
-- this is a modified and more complete version of my lightDM scripts, made to work with gdm/gnome. includes install - script. made for manjaro linux.
+- this is a modified and more complete version of my lightDM scripts, made to work with gdm/gnome. 
+- includes an install script to remove conflicting configurations, blacklist, drivers/modules. 
+- made by a manjaro user for use with manjaro linux. (other distros would require modification)
+- 
 - this install script and accompanying scripts/.conf files will setup an intel/nvidia PRIME setup that will provide
-- the best possible performance for your intel/nvidia optimus laptop. this will also allow for switching between
+- the best possible performance for your intel/nvidia optimus laptop. this will also allow for easy switching between
 - intel/nvidia (prime) mode and an intel only mode that also completely powers down and removes the nvidia gpu
-- from sight allowing for improved battery life, and not negatively effect sleep/suspend.
+- from sight allowing for improved battery life, and not negatively effect sleep/suspend cycles.
 
   - this script by default is for an intel gpu with a ~~BusID 0:2:0~~
   - EDIT: intel BusID is only needed if intel drivers require it to work (i have not found this to be the case).
   - and an nvidia gpu with BusID 01:00:0`
   - you can verify this in terminal with this command `lspci | grep -E 'VGA|3D'`
-  - if yours do not match, edit ~~/optimus-switch-gdm/switch/intel/intel-xorg.conf to match your BusID~~
+  - if yours does not match, edit ~~/optimus-switch-gdm/switch/intel/intel-xorg.conf to match your BusID~~
   - and ~/optimus-switch-gdm/switch/nvidia/nvidia-xorg.conf  to match your nvidia BusID
-  - DO THIS BEFORE RUNNING INSTALL SCRIPT, if you want it to work anyway.
-  - note: output like this "00:02.0 VGA " has to look like this 0:2:0 in the .conf for it to work.
+  - DO THIS BEFORE RUNNING INSTALL SCRIPT, that is, if you want it to work anyway.
+  - note: output like this "00:02.0 VGA " has to be formatted like this `0:2:0` in nvidia-xorg.conf for it to work properly.
 
 
 Lets begin.
@@ -44,7 +47,7 @@ then:
 - 
 -  Done! after reboot you will be using intel/nvidia prime. 
 - 
-- to change the default mode to intel only, run:`sudo setintel.sh`
+- to change the default mode to intel only, run:`sudo set-intel.sh`
 - to switch the default mode to intel/nvidia prime, run: `sudo set-nvidia.sh`
 - 
 - Done!
