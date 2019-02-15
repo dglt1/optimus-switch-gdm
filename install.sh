@@ -16,7 +16,8 @@ echo 'rm -rf /etc/modprobe.d/mhwd-gpu.conf'
 rm -rf /etc/modules-load.d/mhwd-gpu.conf
 echo 'rm -rf /etc/modules-load.d/mhwd-gpu.conf'
 ##rm -rf /usr/local/bin/optimus.sh  ???
-
+rm -rf /usr/local/share/optimus.desktop
+echo 'rm -rf /usr/local/share/optimus.desktop'
 sleep 2
 echo 'Copying /switch & contents to /etc/switch/ .......'
 cp -r /home/dglt/optimus-switch-gdm/switch/ /etc/
