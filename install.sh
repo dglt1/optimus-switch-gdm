@@ -5,25 +5,50 @@
 # and following GPU BusID's        #
 # intel iGPU BusID  00:02:0        #
 # nvidia dGPU BusID  01:00:0       #
+# sudo chmod +x install.sh  first! #
 ####################################
 
-echo 'Removing current nvidia prime setup......'
+echo '##################################################################'
+echo '# be sure you have all requirements BEFORE running this script  ##'
+echo '# "pacman -S linux-headers acpi_call-dkms xf86-video-intel git" ##'
+echo '# ****installing in 5 sec... CTRL+C to abort****                ##'
+echo '##################################################################'
+sleep 6
+echo ' '
+echo '##################################################################'
+echo '#errors about removing files can be ignored, i wrote this script##'
+echo '#with the most common files in mind, you will not have all of   ##'
+echo '#them, this is ok!                                              ##'
+echo '##################################################################'
+echo '## IF YOU HAVE ERRORS ABOUT COPYING FILES, SOMETHING IS WRONG   ##'
+echo '## MAKE SURE THIS IS RUN WITH SUDO AND FROM DIRECTORY           ##'
+echo '## /home/$USER/optimus-switch-gdm/  (this is very important!!!) ##'
+echo '##################################################################'
+sleep 5
+
+echo ' '
+echo 'Removing current nvidia prime setup if applicable......'
 rm -rf /etc/X11/mhwd.d/nvidia.conf
-echo 'rm -rf /etc/X11/mhwd.d/nvidia.conf'
+rm -rf /etc/X11/mhwd.d/nvidia.conf.nvidia-xconfig-original
+echo 'rm -rf /etc/X11/mhwd.d/nvidia.conf*'
 rm -rf /etc/X11/xorg.conf.d/90-mhwd.conf
 echo 'rm -rf /etc/X11/xorg.conf.d/90-mhwd.conf'
 rm -rf /etc/modprobe.d/mhwd-gpu.conf
+rm -rf /etc/modprobe.d/optimus.conf
+rm -rf /etc/modprobe.d/nvidia.conf
 echo 'rm -rf /etc/modprobe.d/mhwd-gpu.conf'
 rm -rf /etc/modprobe.d/nvidia-drm.conf
-echo 'rm -rf /etc/modprobe.d/nvidia-drm.conf'
+rm -rf /etc/modprobe.d/nvidia.conf
+echo 'rm -rf /etc/modprobe.d/nvidia*.conf'
 rm -rf /etc/modules-load.d/mhwd-gpu.conf
 echo 'rm -rf /etc/modules-load.d/mhwd-gpu.conf'
-##rm -rf /usr/local/bin/optimus.sh  ???
+rm -rf /usr/local/bin/optimus.sh
 rm -rf /usr/local/share/optimus.desktop
 echo 'rm -rf /usr/local/share/optimus.desktop'
 sleep 2
-echo 'Copying /switch & contents to /etc/switch/ .......'
-cp -r /home/dglt/optimus-switch-gdm/switch/ /etc/
+
+echo 'Copying contents of ~/optimus-switch-gdm/* to /etc/ .......'
+cp -r /home/$USER/optimus-switch-gdm/* /etc/ 
 
 sleep 2
 echo 'Copying set-intel.sh and set-nvidia.sh to /usr/local/bin/'
@@ -41,12 +66,12 @@ chown root:root /etc/systemd/system/disable-nvidia.service
 chmod 644 /etc/systemd/system/disable-nvidia.service
 
 sleep 1
-echo 'Creating symlinks...'
+echo 'Creating symlinks ("file exists" errors can be ignored)....... '
 ln -s /usr/local/share/optimus.desktop /usr/share/gdm/greeter/autostart/optimus.desktop
 ln -s /usr/local/share/optimus.desktop /etc/xdg/autostart/optimus.desktop
 
 sleep 1
-echo 'Setting nvidia prime mode.......'
+echo 'Setting nvidia prime mode (sudo set-nvidia.sh).......'
 
 cp /etc/switch/nvidia/nvidia-mhwd.conf /etc/X11/mhwd.d/99-nvidia.conf
 cp /etc/switch/nvidia/nvidia-xorg.conf /etc/X11/xorg.conf.d/99-nvidia.conf

@@ -9,7 +9,7 @@ After=graphical.target
 [Service]
 Type=oneshot
 RemainAfterExit=no
-ExecStart=/usr/bin/sleep 5
+ExecStart=/usr/bin/sleep 8
 ExecStart=/usr/local/bin/optimus.sh
 
 [Install]

@@ -13,7 +13,7 @@ rm -rf /usr/local/bin/optimus.sh
 sleep 1
 
 echo 'Setting intel only mode.......'
-cp /etc/switch/intel/modeset-xorg.conf /etc/X11/xorg.conf.d/99-intel.conf
+cp /etc/switch/intel/intel-xorg.conf /etc/X11/xorg.conf.d/99-intel.conf
 cp /etc/switch/intel/intel-modprobe.conf /etc/modprobe.d/99-intel.conf
 cp /etc/switch/intel/no-optimus.sh /usr/local/bin/optimus.sh
 
