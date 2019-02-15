@@ -14,8 +14,8 @@ rm -rf /etc/X11/xorg.conf.d/90-mhwd.conf
 echo 'rm -rf /etc/X11/xorg.conf.d/90-mhwd.conf'
 rm -rf /etc/modprobe.d/mhwd-gpu.conf
 echo 'rm -rf /etc/modprobe.d/mhwd-gpu.conf'
-#rm -rf /etc/modprobe.d/nvidia-drm.conf
-#echo 'rm -rf /etc/modprobe.d/nvidia-drm.conf'
+rm -rf /etc/modprobe.d/nvidia-drm.conf
+echo 'rm -rf /etc/modprobe.d/nvidia-drm.conf'
 rm -rf /etc/modules-load.d/mhwd-gpu.conf
 echo 'rm -rf /etc/modules-load.d/mhwd-gpu.conf'
 ##rm -rf /usr/local/bin/optimus.sh  ???
