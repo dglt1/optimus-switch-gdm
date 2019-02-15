@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Optimus
+Exec=/usr/local/bin/optimus.sh
+NoDisplay=true
+X-GNOME-Autostart-Phase=DisplayServer

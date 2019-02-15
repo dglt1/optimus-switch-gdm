@@ -1,0 +1,16 @@
+#/etc/systemd/system/run-root-script.service
+#sudo systemctl enable run-root-script.service
+#runs gpu disable script as root at graphical.target
+
+[Unit]
+Description=run root script at resume
+After=graphical.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=no
+ExecStart=/usr/bin/sleep 5
+ExecStart=/usr/local/bin/optimus.sh
+
+[Install]
+WantedBy=graphical.target
