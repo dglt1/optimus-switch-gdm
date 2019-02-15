@@ -1,7 +1,10 @@
 #!/bin/sh
 
 ####################################
-#custom install script for @linesma#
+# custom install script for GDM    #
+# and following GPU BusID's        #
+# intel iGPU BusID  00:02:0        #
+# nvidia dGPU BusID  01:00:0       #
 ####################################
 
 echo 'Removing current nvidia prime setup......'
