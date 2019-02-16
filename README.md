@@ -41,8 +41,8 @@ then:
 - in terminal, from your home directory ~/  (this is important for the install script to work properly)
 - 
 - `git clone https://github.com/dglt1/optimus-switch-gdm.git`
-- `sudo chmod +x ~/optimus-switch-gdm/install.sh`
 - `cd ~/optimus-switch-gdm`
+- `chmod +x install.sh`
 - `sudo ./install.sh`
 - 
 -  Done! after reboot you will be using intel/nvidia prime. 
@@ -54,7 +54,7 @@ then:
 -
 switch as often as you like. i installed a fresh gnome earlier just to be sure the setup scripts work and install as they should and it worked out perfectly, both intel mode and prime mode work without any issues.
 
-- you may notice that after you boot into the intel only mode that the nvidia gpu is not yet disabled and its because you - cant run a proper test while running prime that involves disable the nvidia driver (it hard locks up the system).
+- you may notice that after you boot into the intel only mode that the nvidia gpu is not yet disabled and its because you - cant run a proper acpi_call test while using the nvidia gpu. (it hard locks up the system).
 
 - so once your booted into an intel only session run this in terminal:
 - `sudo /usr/share/acpi_call/examples/turn_off_gpu.sh`
@@ -62,7 +62,7 @@ switch as often as you like. i installed a fresh gnome earlier just to be sure t
 you should see a list of various acpi calls, find the one that says “works!” , copy it. and then:
 `sudo nano /etc/switch/intel/no-optimus.sh`
 
-at the bottom you will see 2 lines #commented out, uncomment them (remove #) and if the acpi call is different from the one you just copied, edit/replace with the good one. save/exit.
+at the bottom you will see 2 lines #commented out, uncomment them (remove #) and if the acpi call is different from the one you just copied, edit/replace with the good one. also be sure nvidia's BusID matches. save/exit.
 
 then:
 
