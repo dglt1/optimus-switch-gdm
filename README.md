@@ -4,7 +4,7 @@
 - made by a manjaro user for use with manjaro linux. (other distros would require modification)
 - 
 - this install script and accompanying scripts/.conf files will setup an intel/nvidia PRIME setup that will provide
-- the best possible performance for your intel/nvidia optimus laptop. this will also allow for easy switching between
+- the best possible performance for your intel/nvidia optimus laptop. optimus-switch will also allow for easy switching between
 - intel/nvidia (prime) mode and an intel only mode that also completely powers down and removes the nvidia gpu
 - from sight allowing for improved battery life, and not negatively effect sleep/suspend cycles.
 
@@ -50,7 +50,7 @@ then:
 - to change the default mode to intel only, run:`sudo set-intel.sh`
 - to switch the default mode to intel/nvidia prime, run: `sudo set-nvidia.sh`
 - 
-- Done!
+- Done! read below.
 -
 switch as often as you like. i installed a fresh gnome earlier just to be sure the setup scripts work and install as they should and it worked out perfectly, both intel mode and prime mode work without any issues.
 
