@@ -81,3 +81,7 @@ usage after running install script:
 `sudo set-nvidia.sh`  sets intel/nvidia (prime) mode.
 
 this should be pretty straight forward, if however, you cant figure it out, i am @dglt on the manjaro forum. 
+
+
+- added side-note, for persistent changes to configurations, modify the configurations used for switching located in
+ - /etc/switch/nvidia/  and  /etc/switch/intel/  
