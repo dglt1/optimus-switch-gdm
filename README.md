@@ -1,4 +1,5 @@
 # optimus-switch-gdm
+- if your looking for the SDDM or LightDM versions, you can get to those repo's here https://github.com/dglt1
 - this is a modified and more complete version of my lightDM scripts, made to work with gdm/gnome. 
 - includes an install script to remove conflicting configurations, blacklist, drivers/modules. 
 - made by a manjaro user for use with manjaro linux. (other distros would require modification)
