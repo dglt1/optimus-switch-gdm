@@ -55,16 +55,14 @@ video-nvidia-435xx
 - `chmod +x install.sh`
 - `sudo ./install.sh`
 - 
--  Done! after reboot you will be using intel/nvidia prime. 
+-  after reboot you will be using intel/nvidia prime. 
 - 
 - to change the default mode to intel only, run:`sudo set-intel.sh`
 - to switch the default mode to intel/nvidia prime, run: `sudo set-nvidia.sh`
 - 
-- Done! read below.
--
-switch as often as you like. i installed a fresh gnome earlier just to be sure the setup scripts work and install as they should and it worked out perfectly, both intel mode and prime mode work without any issues.
+-  
 
-- you may notice that after you boot into the intel only mode that the nvidia gpu is not yet disabled and its because you - cant run a proper acpi_call test while using the nvidia gpu. (it hard locks up the system).
+- you may notice that after you boot into the intel only mode that the nvidia gpu is not yet disabled and its because you - cant run a proper acpi_call test while using the nvidia gpu. (it hard locks the system).
 
 - so once your booted into an intel only session run this in terminal:
 - `sudo /etc/switch/gpu_switch_check.sh`
