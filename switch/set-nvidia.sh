@@ -22,7 +22,7 @@ cp /etc/switch/nvidia/optimus.sh /usr/local/bin/optimus.sh
 
 sleep 1 
 echo 'disabling disable-nvidia.service.....'
-systemctl disable disable-nvidia.service
+systemctl -q disable disable-nvidia.service
 
 sleep 1
 echo 'Done! After reboot you will be using nvidia prime mode.'
