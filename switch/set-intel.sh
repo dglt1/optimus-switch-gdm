@@ -20,7 +20,7 @@ cp /etc/switch/intel/no-optimus.sh /usr/local/bin/optimus.sh
 sleep 1
 
 echo 'enabling disable-nvidia.service'
-systemctl enable disable-nvidia.service
+systemctl -q enable disable-nvidia.service
 sleep 1
 echo 'Done! After reboot you will be using intel only mode with the nvidia gpu disabled.'
 
