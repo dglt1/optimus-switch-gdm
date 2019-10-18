@@ -37,6 +37,10 @@ rm -rf /etc/X11/mhwd.d/nvidia.conf
 rm -rf /etc/X11/mhwd.d/nvidia.conf.nvidia-xconfig-original
 echo 'rm -rf /etc/X11/mhwd.d/nvidia.conf*'
 rm -rf /etc/X11/xorg.conf.d/90-mhwd.conf
+rm -rf /etc/X11/xorg.conf.d/nvidia.conf
+rm -rf /etc/X11/xorg.conf.d/optimus.conf
+rm -rf /etc/X11/xorg.conf.d/xorg.conf
+rm -rf /etc/X11/xorg.conf.d/20-intel.conf
 echo 'rm -rf /etc/X11/xorg.conf.d/90-mhwd.conf'
 rm -rf /etc/modprobe.d/mhwd-gpu.conf
 rm -rf /etc/modprobe.d/optimus.conf
