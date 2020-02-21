@@ -97,12 +97,13 @@ chmod +x /usr/local/bin/set-intel-x11.sh
 chmod +x /usr/local/bin/set-intel-wayland.sh
 chmod +x /usr/local/bin/set-nvidia.sh
 chmod a+rx /usr/local/bin/optimus.sh
+chmod +x /usr/local/bin/optimus-switch-uninstall.sh
 chmod a+rx /etc/switch/intel/no-optimus.sh
 chmod a+rx /etc/switch/nvidia/optimus.sh
 chmod +x /etc/switch/gpu_switch_check.sh
 sleep 1
 
-echo 'Currently boot mode is set to nvidia prime.'
+echo 'Current boot mode is set to nvidia prime.'
 echo 'you can switch to intel only mode with sudo set-intel-x11.sh or set-intel-wayland.sh and reboot.'
 sleep 1
 
