@@ -36,4 +36,4 @@ echo '#optimus-switch is now uninstalled & wayland is disabled    #'
 echo '#if you reboot now, you will not have a working Xorg setup. #'    
 echo '#setup another optimus solution before rebooting            #'
 echo '#############################################################'
-rm -rf optimus-switch-uninstall.sh
+rm -rf /usr/local/bin/optimus-switch-uninstall.sh
