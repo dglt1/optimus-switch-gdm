@@ -14,11 +14,12 @@ rm -rf /usr/local/bin/optimus.sh
 sleep 1
 echo 'Setting nvidia prime mode.......'
 
-
 cp /etc/switch/nvidia/nvidia-xorg.conf /etc/X11/xorg.conf.d/99-nvidia.conf
 cp /etc/switch/nvidia/nvidia-modprobe.conf /etc/modprobe.d/99-nvidia.conf
 cp /etc/switch/nvidia/nvidia-modules.conf /etc/modules-load.d/99-nvidia.conf
 cp /etc/switch/nvidia/optimus.sh /usr/local/bin/optimus.sh
+sed -i '/WaylandEnable/d' /etc/gdm/custom.conf
+sed -i 's/\[daemon\]/\[daemon\]\nWaylandEnable=False/' /etc/gdm/custom.conf
 
 sleep 1 
 echo 'disabling disable-nvidia.service.....'
