@@ -90,5 +90,5 @@ The nvidia gpu should be disabled and no longer visible (inxi, mhwd, lspci wont 
 ## Misc
 ### manjaroptimus-appindicator
 Indicator and GUI switch for optimus-switch on Manjaro
-https://github.com/linesma/manjaroptimus-appindicator
+https://github.com/linesma/manjaroptimus-appindicator-gdm
 
