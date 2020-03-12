@@ -9,7 +9,8 @@ fi
 
 echo 'Removing optimus-switch'
 
-rm -rf /usr/local/bin/set-intel.sh
+rm -rf /usr/local/bin/set-intel-x11.sh
+rm -rf /usr/local/bin/set-intel-wayland.sh
 rm -rf /usr/local/bin/set-nvidia.sh
 rm -rf /usr/local/bin/optimus.sh
 rm -rf /etc/switch
@@ -27,10 +28,12 @@ rm -rf /etc/modprobe.d/99-intel.conf
 rm -rf /etc/modules-load.d/99-intel.conf
 rm -rf /usr/local/share/optimus.desktop
 
-sleep 1
-echo 'optimus-switch is now uninstalled'
-echo '################################'
+sed -i '/WaylandEnable/d' /etc/gdm/custom.conf
+sed -i 's/\[daemon\]/\[daemon\]\nWaylandEnable=False/' /etc/gdm/custom.conf
 
-echo 'if you reboot now, you will not have a working Xorg setup.'
-echo 'setup another optimus solution before rebooting.'
-rm -rf uninstall-switch.sh
+echo '#############################################################'
+echo '#optimus-switch is now uninstalled & wayland is disabled    #'
+echo '#if you reboot now, you will not have a working Xorg setup. #'    
+echo '#setup another optimus solution before rebooting            #'
+echo '#############################################################'
+rm -rf /usr/local/bin/optimus-switch-uninstall.sh
